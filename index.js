@@ -7,10 +7,12 @@ dotenv.config()
 const app = express();
 const port = 3000;
 app.use(cors({
-  origin: '*', 
+  origin: '*',
   methods: 'POST',
   allowedHeaders: ['Content-Type', 'x-auth-token'],
-}))
+  optionsSuccessStatus: 204,
+}));
+app.options('/generate-workout', cors());
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
