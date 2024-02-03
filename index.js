@@ -7,7 +7,7 @@ dotenv.config()
 const app = express();
 const port = 3000;
 app.use(cors({
-  origin: '*',
+  origin: 'https://ai-workout-builder.vercel.app',
   methods: 'POST',
   allowedHeaders: ['Content-Type', 'x-auth-token'],
   optionsSuccessStatus: 204,
