@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 })
 
 
-app.post('/generate-workout', async (req, res) => {
+app.post('/generate-workout',  cors(corsOptions),async (req, res) => {
   try {
     const apiUrl = 'https://api.getknit.ai/v1/router/run';
     const authToken = process.env.AUTH_TOKEN;
