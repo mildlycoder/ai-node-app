@@ -6,12 +6,15 @@ const cors = require('cors')
 dotenv.config()
 const app = express();
 const port = 3000;
-app.use(cors({
+
+const corsOptions = {
   origin: 'https://ai-workout-builder.vercel.app',
   methods: 'POST',
   allowedHeaders: ['Content-Type', 'x-auth-token'],
   optionsSuccessStatus: 204,
-}));
+}
+
+app.use(cors(corsOptions));
 app.options('/generate-workout', cors());
 app.use(bodyParser.json());
 
